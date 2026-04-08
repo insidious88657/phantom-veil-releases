@@ -8,6 +8,7 @@ This repository serves as the official distribution channel for our beta binarie
 
 - [**Android APK (v1.0.0)**](https://github.com/insidious88657/phantom-veil-releases/releases/download/v1.0.0/phantom-veil-v1.0.0.apk)
 - [**Chrome Extension (v1.0.0)**](https://github.com/insidious88657/phantom-veil-releases/releases/download/v1.0.0/phantom-veil-chrome-v1.0.0.zip)
+- [**Firefox Extension (v1.0.0)**](https://github.com/insidious88657/phantom-veil-releases/releases/download/v1.0.0/phantom-veil-firefox-v1.0.0.zip)
 - [**macOS (Apple Silicon)**](https://github.com/insidious88657/phantom-veil-releases/releases/download/v1.0.0/Phantom.Veil_1.0.0_aarch64.dmg)
 - [**Windows Setup (.exe)**](https://github.com/insidious88657/phantom-veil-releases/releases/download/v1.0.0/Phantom.Veil_1.0.0_x64-setup.exe)
 - [**Windows Installer (.msi)**](https://github.com/insidious88657/phantom-veil-releases/releases/download/v1.0.0/Phantom.Veil_1.0.0_x64_en-US.msi)
@@ -25,6 +26,13 @@ This repository serves as the official distribution channel for our beta binarie
 3. Enable **Developer Mode** using the toggle in the top right corner.
 4. Click **"Load unpacked"** and select the extracted `chrome-mv3` folder.
 5. The extension should now be installed and ready! Pin it to your toolbar for easy access.
+
+### Firefox Extension
+1. Download `phantom-veil-firefox-v1.0.0.zip` (do not extract it).
+2. Open Firefox and navigate to `about:debugging#/runtime/this-firefox`.
+3. Click the **"Load Temporary Add-on..."** button.
+4. Select the downloaded `.zip` file.
+5. The extension is now temporarily installed for your current session!
 
 ### Android APK
 1. Download `phantom-veil-v1.0.0.apk` directly to your Android device.
@@ -46,13 +54,13 @@ This repository serves as the official distribution channel for our beta binarie
 
 As you progress through this list, please notify the developer so we can formally check these items off. Below you will find specific instructions on how to verify each feature is working under the hood.
 
-### 🌐 Chrome Extension
+### 🌐 Web Extensions (Chrome & Firefox)
 
 - [ ] **Heuristic Tracker Detection & Basic Blocking**
   - **How to verify:** Navigate to an ad-heavy site like `cnn.com` or `nytimes.com`. 
     1. Open the extension popup: Verify the "Privacy Score Dashboard" updates dynamically and the blocked tracker count increases.
     2. Open the "Audit Feed" in the extension menu: Ensure it populates with requests in real-time.
-    3. Check the Engine: Go to `chrome://extensions/`, find Phantom Veil, and click `background.js` (or Service Worker) to open its DevTools Console. Look for ML model detection logs.
+    3. Check the Engine: Go to `chrome://extensions/` (or `about:debugging` in Firefox), find Phantom Veil, and click `background.js` (or "Inspect" in Firefox) to open its DevTools Console. Look for ML model detection logs.
     4. General Network check: In the website's devtools Network tab, you should see requests to known endpoints (like `google-analytics`) blocked by the client (colored red in Chrome).
 
 - [ ] **Aggressive Protection Mode**
