@@ -8,6 +8,12 @@ This repository serves as the official distribution channel for our beta binarie
 
 - [**Android APK (v1.0.0)**](https://github.com/insidious88657/phantom-veil-releases/releases/download/v1.0.0/phantom-veil-v1.0.0.apk)
 - [**Chrome Extension (v1.0.0)**](https://github.com/insidious88657/phantom-veil-releases/releases/download/v1.0.0/phantom-veil-chrome-v1.0.0.zip)
+- [**macOS (Apple Silicon)**](https://github.com/insidious88657/phantom-veil-releases/releases/download/v1.0.0/Phantom.Veil_1.0.0_aarch64.dmg)
+- [**Windows Setup (.exe)**](https://github.com/insidious88657/phantom-veil-releases/releases/download/v1.0.0/Phantom.Veil_1.0.0_x64-setup.exe)
+- [**Windows Installer (.msi)**](https://github.com/insidious88657/phantom-veil-releases/releases/download/v1.0.0/Phantom.Veil_1.0.0_x64_en-US.msi)
+- [**Linux (AppImage)**](https://github.com/insidious88657/phantom-veil-releases/releases/download/v1.0.0/Phantom.Veil_1.0.0_amd64.AppImage)
+- [**Linux (.deb)**](https://github.com/insidious88657/phantom-veil-releases/releases/download/v1.0.0/Phantom.Veil_1.0.0_amd64.deb)
+- [**Linux (.rpm)**](https://github.com/insidious88657/phantom-veil-releases/releases/download/v1.0.0/Phantom.Veil-1.0.0-1.x86_64.rpm)
 
 ---
 
@@ -25,6 +31,14 @@ This repository serves as the official distribution channel for our beta binarie
 2. Tap the downloaded file to install.
 3. If prompted, select **"Settings"** and enable **"Allow from this source"** to let your browser/file manager install the app.
 4. Launch Phantom Veil to begin.
+
+### Desktop Applications (macOS, Windows, Linux)
+1. Download the installer matching your OS from the "Downloads" section above.
+2. Note: Because these are unsigned beta builds, your OS may flag them as unrecognized.
+   - **Windows:** If Microsoft Defender SmartScreen appears, click **"More info"** -> **"Run anyway"**.
+   - **macOS:** If Finder prevents opening the DMG, `Control-click` (or right-click) the application icon and select **"Open"** from the contextual menu.
+   - **Linux:** For `.AppImage`, ensure you make the file executable `chmod +x Phantom.Veil_1.0.0_amd64.AppImage` before running.
+3. Complete the installation and launch the app.
 
 ---
 
@@ -76,6 +90,23 @@ As you progress through this list, please notify the developer so we can formall
     1. Verify Android correctly asks for runtime permissions for the Camera and Microphone.
     2. Ensure audio plays through the correct speaker and the camera orientation is correct.
     3. Test muting your microphone and ensuring the Desktop extension stops receiving audio.
+
+### 💻 Desktop Applications (macOS, Windows, Linux)
+
+- [ ] **System Installation & Integration**
+  - **How to verify:** Install the application locally.
+    1. Verify the application installs correctly into the Applications/Program Files directory.
+    2. Verify the uninstaller correctly cleans up the files if testing on Windows/Linux.
+
+- [ ] **Cross-Device Mesh Messaging**
+  - **How to verify:** Open the desktop app and communicate with either the Android or Chrome Extension instance.
+    1. Ensure the UI feels responsive outside of the browser context.
+    2. Check for native OS notifications on incoming messages (if supported).
+
+- [ ] **P2P Media (Camera & Mic Routing)**
+  - **How to verify:** Start a call from the Desktop App to the Android App.
+    1. Check OS privacy settings to ensure the Desktop App explicitly requests access to your Camera and Microphone.
+    2. Try changing your audio or video source within the desktop app (if settings exist) and ensure the WebRTC stream updates.
 
 ---
 
