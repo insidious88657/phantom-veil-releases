@@ -93,11 +93,24 @@ As you progress through this list, please notify the developer so we can formall
     1. Test sending long strings of text.
     2. Force close the app and reopen it to ensure the state or WebSocket relay handles disconnection gracefully.
 
-- [ ] **P2P Video & Voice Calling (Permissions & Negotiation)**
-  - **How to verify:** Accept an incoming call from the Chrome Extension.
+- [x] **P2P Voice Calling (Android ↔ Android) ✅ VERIFIED**
+  - **Status:** Fully tested and working as of April 9th, 2026.
+  - **What was verified:**
+    1. Voice calls connect successfully between two Android devices (Samsung Galaxy & Moto G).
+    2. Bidirectional audio confirmed — both caller and receiver hear each other clearly.
+    3. Incoming call modal displays with Accept/Decline buttons on the receiving device.
+    4. Call termination propagates correctly to both sides when either party hangs up.
+    5. Call history is recorded on both devices.
+    6. TURN relay (Metered.ca) successfully routes media through carrier-grade NAT.
+  - **Known limitations:**
+    - Screen sharing (`getDisplayMedia`) is not available in Android WebView — shows a friendly error.
+    - Video calling UI is present but not yet verified with front-facing camera streams.
+
+- [ ] **P2P Video Calling (Camera Streams)**
+  - **How to verify:** Accept an incoming video call from another device.
     1. Verify Android correctly asks for runtime permissions for the Camera and Microphone.
-    2. Ensure audio plays through the correct speaker and the camera orientation is correct.
-    3. Test muting your microphone and ensuring the Desktop extension stops receiving audio.
+    2. Ensure the camera orientation is correct and video feed is stable.
+    3. Test muting your microphone and toggling video on/off.
 
 ### 💻 Desktop Applications (macOS, Windows, Linux)
 
