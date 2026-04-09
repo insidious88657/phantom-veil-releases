@@ -106,7 +106,7 @@ As you progress through this list, please notify the developer so we can formall
     - Screen sharing (`getDisplayMedia`) is not available in Android WebView — shows a friendly error.
     - Video calling UI is present but not yet verified with front-facing camera streams.
 
-- [x] **P2P Video Calling (Camera Streams) ✅ VERIFIED**
+- [x] **P2P Video Calling (Android ↔ Android) ✅ VERIFIED**
   - **Status:** Fully tested and working as of April 9th, 2026.
   - **What was verified:**
     1. Video calls connect successfully between two Android devices.
