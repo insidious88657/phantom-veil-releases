@@ -88,10 +88,14 @@ As you progress through this list, please notify the developer so we can formall
 - [ ] **Successful Installation & Boot**
   - **How to verify:** Ensure the app does not crash upon opening. Verify UI layouts scale properly for your screen size.
 
-- [ ] **Cross-Device Mesh Messaging (Receiver & Sender)**
-  - **How to verify:** Use the messaging dashboard to communicate with a connected Chrome Extension. 
-    1. Test sending long strings of text.
-    2. Force close the app and reopen it to ensure the state or WebSocket relay handles disconnection gracefully.
+- [x] **Cross-Device Mesh Messaging (Android ↔ Android) ✅ VERIFIED**
+  - **Status:** Fully tested and working as of April 9th, 2026.
+  - **What was verified:**
+    1. Real-time chat messages successfully route between two Android devices.
+    2. Symmetric encryption generates silently and automatically decrypts on the receiver side.
+    3. UI correctly drops the old mock tool buttons (encrypt/decrypt/AI scan) in favor of normal E2E messaging.
+    4. Address book contacts sync properly to the CommsPanel.
+    5. Incoming messages automatically target the sender in the reply box.
 
 - [x] **P2P Voice Calling (Android ↔ Android) ✅ VERIFIED**
   - **Status:** Fully tested and working as of April 9th, 2026.
